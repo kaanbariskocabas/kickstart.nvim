@@ -9,6 +9,11 @@ vim.g.loaded_netrw = 1
 -- Relative line numbers
 vim.o.relativenumber = true
 
+-- tabs
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
 ---@module 'lazy'
 ---@type LazySpec
 return {}
