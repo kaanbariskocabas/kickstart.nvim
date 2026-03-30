@@ -2,6 +2,12 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+-- Disable netrw
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
+-- Relative line numbers
+vim.o.relativenumber = true
 
 ---@module 'lazy'
 ---@type LazySpec
