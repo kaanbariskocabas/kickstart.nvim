@@ -609,7 +609,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        ts_ls = {},
+        -- ts_ls = {},
 
         stylua = {}, -- Used to format Lua code
 
@@ -655,7 +655,11 @@ require('lazy').setup({
         -- You can add other tools here that you want Mason to install
       })
 
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { 
+        ensure_installed = ensure_installed,
+        auto_update = false,   -- Do not update existing tools
+        run_on_start = false,  -- Do not even check on startup (Manual only)
+      }
 
       for name, server in pairs(servers) do
         vim.lsp.config(name, server)
@@ -700,8 +704,8 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'prettierd', 'prettierd', 'eslint_d', stop_after_first = true },
+        -- javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        -- typescript = { 'prettierd', 'prettierd', 'eslint_d', stop_after_first = true },
       },
     },
   },
